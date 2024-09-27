@@ -46,50 +46,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload kvrocks_exporter_darwin_amd64_v1
+      - name: Upload build results
         uses: actions/upload-artifact@v4
         with:
-          name: kvrocks_exporter_darwin_amd64_v1_${{ github.run_number }}
-          path: dist/kvrocks_exporter_darwin_amd64_v1/kvrocks_exporter
-
-      - name: Upload kvrocks_exporter_linux_arm64
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_linux_arm64_${{ github.run_number }}
-          path: dist/kvrocks_exporter_linux_arm64/kvrocks_exporter
-
-      - name: Upload kvrocks_exporter_linux_386
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_linux_386_${{ github.run_number }}
-          path: dist/kvrocks_exporter_linux_386/kvrocks_exporter
-
-      - name: Upload kvrocks_exporter_linux_amd64_v1
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_linux_amd64_v1_${{ github.run_number }}
-          path: dist/kvrocks_exporter_linux_amd64_v1/kvrocks_exporter
-
-      - name: Upload kvrocks_exporter_darwin_arm64
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_darwin_arm64_${{ github.run_number }}
-          path: dist/kvrocks_exporter_darwin_arm64/kvrocks_exporter
-
-      - name: Upload kvrocks_exporter_windows_amd64_v1
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_windows_amd64_v1_${{ github.run_number }}
-          path: dist/kvrocks_exporter_windows_amd64_v1/kvrocks_exporter.exe
-
-      - name: Upload kvrocks_exporter_windows_arm64
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_windows_arm64_${{ github.run_number }}
-          path: dist/kvrocks_exporter_windows_arm64/kvrocks_exporter.exe
-
-      - name: Upload kvrocks_exporter_windows_386
-        uses: actions/upload-artifact@v4
-        with:
-          name: kvrocks_exporter_windows_386_${{ github.run_number }}
-          path: dist/kvrocks_exporter_windows_386/kvrocks_exporter.exe
+          name: kvrocks_exporter_artifacts_${{ github.run_number }}
+          path: dist/
