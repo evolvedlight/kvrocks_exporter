@@ -1,7 +1,7 @@
 project_name: kvrocks-exporter
 release:
   github:
-    owner: KvrocksLabs
+    owner: evolvedlight
     name: kvrocks_exporter
 
 builds:
@@ -23,7 +23,7 @@ dockers:
     ids:
       - kvrocks-exporter
     image_templates:
-      - "kvrocks/kvrocks-exporter:v{{ .Version }}-amd64"
+      - "evolvedlight/kvrocks-exporter:v{{ .Version }}-amd64"
     build_flag_templates:
       - "--platform=linux/amd64"
     use: buildx
@@ -33,12 +33,12 @@ dockers:
     ids:
       - kvrocks-exporter
     image_templates:
-      - "kvrocks/kvrocks-exporter:v{{ .Version }}-arm64"
+      - "evolvedlight/kvrocks-exporter:v{{ .Version }}-arm64"
     build_flag_templates:
       - "--platform=linux/arm64"
     use: buildx
 docker_manifests:
-  - name_template: kvrocks/kvrocks-exporter:v{{ .Version }}
+  - name_template: evolvedlight/kvrocks-exporter:v{{ .Version }}
     image_templates:
-      - kvrocks/kvrocks-exporter:v{{ .Version }}-amd64
-      - kvrocks/kvrocks-exporter:v{{ .Version }}-arm64
+      - evolvedlight/kvrocks-exporter:v{{ .Version }}-amd64
+      - evolvedlight/kvrocks-exporter:v{{ .Version }}-arm64
