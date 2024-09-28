@@ -55,6 +55,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        if: success() && startsWith(github.ref, 'refs/tags/')
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: evolvedlight/kvrocks-exporter
+          short-description: ${{ github.event.repository.description }}
+
       - name: Upload build results
         uses: actions/upload-artifact@v4
         with:
