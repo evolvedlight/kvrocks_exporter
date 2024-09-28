@@ -1,7 +1,7 @@
 project_name: kvrocks-exporter
 release:
   github:
-    owner: RocksLabs
+    owner: evolvedlight
     name: kvrocks_exporter
 
 builds:
@@ -19,7 +19,7 @@ builds:
       - amd64
       - arm64
 kos:
-  - repository: docker.io/kvrocks/kvrocks-exporter
+  - repository: docker.io/evolvedlight/kvrocks-exporter
     tags:
       - "{{.Version}}"
       - latest
