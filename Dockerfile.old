@@ -8,7 +8,6 @@ WORKDIR /kvrocks_exporter
 COPY . .
 RUN make build-binaries ARCH=${TARGETARCH}
 
-
 FROM alpine:3.20
 
 COPY --from=build /kvrocks_exporter/.build/kvrocks_exporter /kvrocks_exporter
